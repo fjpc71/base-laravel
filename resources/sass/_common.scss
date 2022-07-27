@@ -1,0 +1,51 @@
+.card{
+    .back{
+        color: $primary;
+        font-size: 15px;
+        line-height: 19px;
+        font-weight: 600;
+        text-transform: uppercase;
+        cursor: pointer;
+        &::after{
+                content: "";
+                background-image: url(/images/icons/back-arrow.svg);
+                height: 7px;
+                width: 13px;
+                background-size: cover;
+                background-repeat: no-repeat;
+                display: inline-block;
+                position: relative;
+                margin-left: 7px;
+                top: -2px;
+            }
+    }
+    .menu-edit{
+        padding-left: 0;
+        list-style: none;
+        border-bottom: 1px solid $secondary;
+        li{
+            margin-right: 40px;
+            font-size: 16px;
+            line-height: 20px;
+            color: #000;
+            cursor: pointer;
+            &.active{
+                color: $primary;
+                font-weight: 600;
+                border-bottom: 4px solid $secondary;
+                padding-bottom: 1px;
+            }
+        }
+    }
+}
+form{
+    .form-section-title{
+        margin-bottom: 20px;
+        font-size: 16px;
+        line-height: 20px;
+        font-weight: 600;
+        letter-spacing: 1.6px;
+        text-transform: uppercase;
+        color: #000;
+    }
+}

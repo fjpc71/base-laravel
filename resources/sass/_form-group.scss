@@ -1,0 +1,110 @@
+.form-group {
+  input,
+  select,
+  textarea {
+    &.form-control {
+      background-color: $color-input-back;
+      border: none;
+      background-image: none;
+      font-size: 16px;
+      line-height: 23px;
+      color: #000;
+      padding-left: 10px;
+    }
+  }
+  input, select{&.form-control{height: 48px;}}
+  &.invalid {
+    input,
+    select {
+      border: 1px solid map-get($theme-colors, success);
+      border: 1px solid map-get($theme-colors, danger);
+    }
+  }
+
+  select {
+    &.form-control {
+      padding-left: 12px;
+      padding-top: 20px;
+    }
+  }
+
+  label {
+    &.bmd-label-floating {
+      position: absolute;
+      top: 14px;
+      right: auto;
+      bottom: auto;
+      left: 10px;
+      transition: all 0.5s ease;
+      z-index: 1;
+      margin: 0;
+      color: #B5BFBD;
+      font-size: 16px;
+    }
+  }
+
+  &.is-filled,
+  &.is-focused {
+    label {
+      &.bmd-label-floating {
+        left: 10px;
+        bottom: auto;
+        top: 5px;
+        right: auto;
+        font-size: 12px;
+        color: $color-input-text;
+      }
+    }
+    .placeholder{
+      top: 1px;
+      font-size: 12px;
+      line-height: 20px;
+      color: $grey-ghost-3;
+    }
+    input.form-control{
+      padding: 16px 10px 5px 10px;
+    }
+  }
+
+  .error-msg {
+    color: var(--danger);
+  }
+  .placeholder {
+    position: absolute;
+    left: 10px;
+    top: 12px;
+    bottom: 11px;
+    pointer-events: none;
+    color: $color-input-text;
+    font-size: 16px;
+    line-height: 23px;
+    transition: all 0.5s ease;
+  }
+  &.active{
+    .placeholder{
+      top: 1px;
+      font-size: 12px;
+      line-height: 20px;
+      color: $grey-ghost-3;
+    }
+    input.form-control{
+      padding: 16px 10px 5px 10px;
+    }
+  }
+  &.bmd-form-group{
+    padding-top: 0;
+  }
+}
+/* .header-list{
+  .form-control{
+    height: 36px !important;
+  }
+} */
+.select-arrow{
+  position: absolute;
+  right: 5px;
+  bottom: 5px;
+  top: auto;
+  left: auto;
+  pointer-events: none;
+}

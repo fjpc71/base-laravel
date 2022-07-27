@@ -1,0 +1,99 @@
+// Functions
+$anim-time: 0.3s;
+@mixin transition($name, $trans, $delay-enter: 0s, $delay-leave: 0s) {
+  .#{$name}-enter-active {
+    transition-duration: $anim-time;
+    transition-delay: $delay-enter;
+    transition-property: all;
+    transition-timing-function: ease-in;
+  }
+
+  .#{$name}-leave-active {
+    transition-duration: $anim-time;
+    transition-property: all;
+    transition-timing-function: ease-out;
+    transition-delay: $delay-leave;
+  }
+
+  .#{$name}-enter,
+  .#{$name}-leave-to {
+    @each $t, $v in $trans {
+      #{$t}: $v;
+    }
+  }
+}
+@mixin button($type, $background-color, $font-color, $hover-color: false) {
+  .btn {
+    &.btn-#{$type} {
+      background-color: $background-color;
+      color: $font-color;
+
+      &.btn-outline {
+        border-color: $background-color;
+        color: $background-color;
+        background-color: white;
+      }
+
+      &.btn-borderless {
+        border: none;
+      }
+
+      &:hover {
+        box-shadow: none;
+        @if $hover-color {
+          background-color: $hover-color;
+        } @else {
+          background-color: desaturate($background-color, 50%);
+        }
+        color: white;
+      }
+
+      &.disabled,
+      &:disabled {
+        background-color: map-get($theme-colors, disabled);
+        color: map-get($theme-colors, primary);
+        font-weight: normal;
+      }
+
+      &:focus,
+      .active {
+        background-color: $background-color;
+      }
+
+      &:focus {
+        outline: 1px solid;
+        outline-offset: 3px;
+        outline-color: $background-color;
+      }
+
+      &:not(:disabled):not(.disabled) {
+        &:focus {
+          box-shadow: none;
+          background-color: darken($background-color, 10%);
+          color: $font-color;
+        }
+      }
+    }
+  }
+
+  .btn-settings {
+    &.btn-#{$type} {
+      background-color: white;
+      margin: auto;
+      border-color: $background-color;
+
+      .icon {
+        color: $background-color;
+        transition: color 0.3s ease;
+      }
+
+      &:hover {
+        background-color: $background-color;
+
+        .icon {
+          color: white;
+        }
+      }
+    }
+  }
+}

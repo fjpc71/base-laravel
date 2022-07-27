@@ -1,0 +1,25 @@
+.data-details {
+    .chart {
+        padding: 20px;
+        height: 240px;
+        background-color: #EFF7F4;
+        border-radius: 5px;
+        margin-bottom: 18px;
+    }
+}
+.temperature-graphs {
+    h5 {
+        margin-bottom: 28px;
+        margin-top: 35px;
+        font-size: 14px;
+        color: var(--primary);
+        font-weight: bold;
+    }
+    .select-float {
+        max-width: 123px;
+    }
+    .dropdown-menu {
+        min-width: auto;
+    }
+}
+

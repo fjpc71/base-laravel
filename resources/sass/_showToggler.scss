@@ -1,0 +1,76 @@
+.show-toggler {
+    width: 35px;
+    height: 50px;
+    margin: 10px 0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    transition: opacity 0.3s ease;
+    cursor: pointer;
+    z-index: 1;
+    .show-button {
+        box-shadow: 0 0 1px var(--dark);
+        margin: 10px 0;
+        width: 25px;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+        background-color: var(--light);
+        transition: background-color 0.3s ease;
+        &:before {
+            content: "";
+            transition: top 0.3s ease;
+            display: block;
+            position: absolute;
+            z-index: 0;
+            top: 0;
+            right: 0;
+            bottom: auto;
+            left: 0;
+            height: 50%;
+            background-color: white;
+        }
+        .icon {
+            margin: 0;
+            padding: 0;
+            color: black;
+            font-size: 15px;
+            height: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1;
+            opacity: 0.6;
+            &:nth-child(2) {
+                opacity: 1;
+                transition: color 0.3s ease;
+                color: var(--primary);
+            }
+        }
+    }
+    &.show {
+        .show-button {
+            background-color: var(--primary);
+            &:before {
+                top: 50%;
+            }
+            .icon {
+                opacity: 1;
+                &:nth-child(2) {
+                    opacity: 0.6;
+                    color: black;
+                }
+            }
+        }
+    }
+}
+
+.item-value {
+    display: flex;
+    .form-group {
+        width: 100%;
+    }
+}

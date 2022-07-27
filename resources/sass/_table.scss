@@ -1,0 +1,135 @@
+.table-wrapper {
+  transition: height 0.5s ease;
+  overflow: hidden;
+}
+
+table {
+  &.table {
+    thead {
+      th {
+        color: $primary;
+        font-size: 11px;
+        line-height: 14px;
+        font-weight: 600;
+        letter-spacing: 0.66px;
+        text-transform: uppercase;
+        &:first-child{
+          padding-left: 20px;
+        }
+      }
+    }
+    td {
+      vertical-align: middle;
+      padding: 10px;
+      label{
+        font-size: 14px;
+        letter-spacing: 0.84px;
+        color: $primary;
+      }
+    }
+
+    tr {
+      td:first-child{
+        padding-left: 20px;
+      }
+    }
+
+    .buttons {
+      width: 50px;
+    }
+
+    .delete {
+      width: 50px;
+      text-align: center;
+      cursor: pointer;
+    }
+  }
+
+  a {
+    font-weight: bold;
+    color: $primary;
+    &:hover{
+      text-decoration: none;
+    }
+  }
+  textarea{
+    width: 100%;
+    min-height: 1.875rem;
+  }
+
+  &.datos-table {
+    tbody + tbody {
+      border-top: 2px solid black;
+    }
+  }
+
+  &.table-fixed {
+    table-layout: fixed;
+
+  }
+  .small {
+    width: 50px;
+
+    &:last-child {
+      width: 56px;
+    }
+  }
+
+  .medium {
+    width: 95px;
+  }
+
+  .big {
+    width: 110px;
+
+    &:first-child {
+      width: calc(110px + 47px);
+    }
+  }
+}
+
+
+.table-tbody-move {
+  transition: all 1s;
+}
+
+.table-item {
+  transition: all 1s;
+}
+
+.table-item > td > div {
+  align-items: center;
+  display: flex;
+  // min-height: 40px;
+  transition: all 1s;
+  margin: 0 !important;
+}
+
+.table-item > td {
+  transition: padding 1s;
+}
+
+.table-tbody-enter,
+.table-tbody-leave-to {
+  line-height: 0;
+  transition: all .5s ease;
+  // transform: translateY(-100%);
+  div {
+    // height: 0 !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    overflow: hidden;
+    // min-height: 0 !important;
+    // height: 0 !important;
+  }
+
+  td {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+  }
+}
+
+.table-entry{
+  line-height: 0.9;
+  padding: 0.4375rem 0;
+}

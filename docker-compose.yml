@@ -1,0 +1,71 @@
+version: "3.8"
+
+services:
+  server:
+    image: nginx:alpine
+    restart: unless-stopped
+    container_name: laravel-nginx
+    ports:
+      - 81:80
+    networks:
+      - app-network
+    volumes:
+      - ./:/var/www
+      - ./docker-compose/nginx/conf.d/:/etc/nginx/conf.d/
+
+  db:
+    image: mysql:5.7.33
+    restart: unless-stopped
+    container_name: laravel-db
+    env_file:
+      - .env
+    environment:
+      LANG: C.UTF-8
+      MYSQL_DATABASE: $DB_DATABASE
+      MYSQL_ROOT_PASSWORD: $DB_PASSWORD
+      MYSQL_PASSWORD: $DB_PASSWORD
+      MYSQL_USER: $DB_USERNAME
+    networks:
+      - app-network
+    volumes:
+      - ./mysql:/var/lib/mysql
+      - ./docker-compose/mysql:/docker-entrypoint-initdb.d
+
+  app:
+    build: .
+    container_name: laravel-app
+    restart: unless-stopped
+    networks:
+      - app-network
+    volumes:
+      - ./:/var/www
+
+  node:
+    image: node:15-alpine
+    working_dir: /var/www
+    volumes:
+      - ./:/var/www
+      - /var/www/node_modules
+    command: sh /var/www/node_start.sh
+    depends_on:
+      - app
+
+  phpmyadmin:
+    image: phpmyadmin
+    depends_on:
+      - db
+    networks:
+      - app-network
+    environment:
+      PMA_HOST: db
+      MYSQL_ROOT_PASSWORD: $DB_PASSWORD
+    ports:
+      - 82:80
+    restart: unless-stopped
+
+networks:
+  app-network:
+    driver: bridge
+
+volumes:
+  dbdata:

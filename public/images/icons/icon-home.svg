@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24.366" height="20.707" viewBox="0 0 24.366 20.707">
+  <g id="casa" transform="translate(0.184 -4.34)">
+    <g id="Grupo_4883" data-name="Grupo 4883" transform="translate(0 4.49)">
+      <g id="Grupo_4882" data-name="Grupo 4882" transform="translate(0)">
+        <path id="Trazado_20349" data-name="Trazado 20349" d="M20.794,16.1a.4.4,0,0,0-.4.4v7.6h-8.8v-6a.4.4,0,0,0-.4-.4h-4a.4.4,0,0,0-.4.4v6h-3.2V16.5a.4.4,0,1,0-.8,0v8a.4.4,0,0,0,.4.4h4a.4.4,0,0,0,.4-.4v-6h3.2v6a.4.4,0,0,0,.4.4h9.6a.4.4,0,0,0,.4-.4v-8A.4.4,0,0,0,20.794,16.1Zm3.09.116-3.89-3.89V7.7a.4.4,0,0,0-.4-.4h-2.4a.4.4,0,1,0,0,.8h2v3.428l-6.9-6.9s-.006-.012-.011-.016a.4.4,0,0,0-.566,0s-.006.011-.011.016L.116,16.212a.4.4,0,0,0,.56.56L12,5.449l7.275,7.275a.384.384,0,0,0,.091.091l3.958,3.958a.4.4,0,0,0,.56-.56Z" transform="translate(0 -4.49)" fill="gray" stroke="gray" stroke-width="0.3"/>
+      </g>
+    </g>
+    <g id="Grupo_4885" data-name="Grupo 4885" transform="translate(13.132 17.621)">
+      <g id="Grupo_4884" data-name="Grupo 4884">
+        <path id="Trazado_20350" data-name="Trazado 20350" d="M36.666,37.5H33.39a.41.41,0,0,0-.409.409v3.275a.41.41,0,0,0,.409.409h3.275a.41.41,0,0,0,.409-.409V37.911A.409.409,0,0,0,36.666,37.5Zm-.409,3.275H33.8V38.321h2.457Z" transform="translate(-32.981 -37.502)" fill="gray" stroke="gray" stroke-width="0.3"/>
+      </g>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,8 @@
+<svg id="icon_angleLeft" data-name="icon/angleLeft" xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48">
+  <g id="Icon_Base" data-name="Icon/Base">
+    <rect id="Rectángulo_1793" data-name="Rectángulo 1793" width="48" height="48" fill="none"/>
+  </g>
+  <g id="_130882" data-name="130882" transform="translate(-39.113 11.803)">
+    <path id="Chevron_Right" d="M54.47,13.067,65.438,24.032a1.232,1.232,0,1,0,1.744-1.74L57.083,12.2,67.181,2.1A1.232,1.232,0,0,0,65.437.361L54.469,11.326A1.243,1.243,0,0,0,54.47,13.067Z" transform="translate(0 0)" fill="#080808"/>
+  </g>
+</svg>

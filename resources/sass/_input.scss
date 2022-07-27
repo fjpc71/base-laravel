@@ -1,0 +1,62 @@
+input {
+  &[type='file'] {
+    display: none;
+  }
+
+  &[type='checkbox'] {
+    display: inline-block;
+    position: relative;
+    margin: 0;
+    border: 1px solid map-get($theme-colors, secondary);
+    border-radius: 0;
+    -webkit-appearance: none;
+    padding: 9px;
+    vertical-align: middle;
+    background-color: $white;
+
+    &:checked {
+      color: map-get($theme-colors, primary);
+
+      &::after {
+        display: none;
+      }
+    }
+  }
+
+  &[type='radio'] {
+    position: relative;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+    &::before {
+      display: block;
+      top: 0;
+      right: auto;
+      bottom: 0;
+      left: 0;
+      width: 20px;
+      height: 20px;
+      content: '';
+    }
+
+    &:checked {
+      &:after {
+        background-color: map-get($theme-colors, primary);
+      }
+    }
+  }
+
+  &[type='number'] {
+    appearance: textfield;
+  }
+}
+
+.form-group {
+  .dropdown-menu {
+    &.show {
+      z-index: 9;
+    }
+  }
+}
