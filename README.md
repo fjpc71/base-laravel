@@ -1,2 +1,2 @@
-# Energanova
+# Base Laravel/Inertia
 
