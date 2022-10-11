@@ -4,4 +4,4 @@
 
 ## docker-compose up -d
 
-### composer dump-autoload
+### composer update (en caso de tener que regenerar la carpeta vendor)
