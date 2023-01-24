@@ -14,7 +14,7 @@ services:
       - ./docker-compose/nginx/conf.d/:/etc/nginx/conf.d/
 
   db:
-    image: mysql:5.7.33
+    image: mysql:8.0.32
     restart: unless-stopped
     container_name: laravel-db
     env_file:

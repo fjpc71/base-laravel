@@ -13,13 +13,6 @@
     }
   }
   input, select{&.form-control{height: 48px;}}
-  &.invalid {
-    input,
-    select {
-      border: 1px solid map-get($theme-colors, success);
-      border: 1px solid map-get($theme-colors, danger);
-    }
-  }
 
   select {
     &.form-control {

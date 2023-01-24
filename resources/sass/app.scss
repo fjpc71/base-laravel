@@ -5,7 +5,7 @@
 @import 'functions';
 @import 'node_modules/bootstrap/scss/variables'; // bootstrap variables
 @import './showToggler';
-@import './graphs';
+//@import './graphs';
 @import './button';
 @import './menu';
 @import 'input';
@@ -30,17 +30,6 @@ main {
     box-shadow: none;
   }
 }
-
-.radio-group {
-  display: flex;
-  justify-content: flex-start;
-  gap: 40px;
-
-  .form-control {
-    width: auto;
-  }
-}
-
 h1 {
   color: #000;
   font-size: 30px;
@@ -58,108 +47,21 @@ h4{
   padding-bottom: 2em;
   max-width: 400px;
 }
-
 *:disabled,
 .disabled {
   opacity: 0.5;
   cursor: auto;
   pointer-events: none;
 }
-
 .modal-backdrop {
   background-color: rgba(0, 0, 0, .5);
 }
-
-.money-wrapper {
-  font-size: 28px;
-
-  .prefix {
-    font-size: 18px;
-  }
-}
-
 a:not([href]):not([class]){
   color: map-get($theme-colors, 'primary');
   cursor: pointer;
   &:hover{
     color: map-get($theme-colors, 'primary');
     text-decoration: underline;
-  }
-}
-
-.page-head{
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1em;
-  margin: 2em 0 3em;
-  & h1, & .btn{
-    margin-top: 0;
-    margin-bottom: 0;
-  }
-  .page-title{
-    display: flex;
-    align-items: center;
-    gap: 1em;
-  }
-}
-.page-section{
-  position: relative;
-  padding-top: 15px;
-  &:after{
-    content:"";
-    display: block;
-    height: 15px;
-    background: linear-gradient(0deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 50%, rgba(249,249,249,0) 100%);;
-    width: 100vw;
-    left: 50%;
-    transform: translateX(-50%);
-    position: absolute;
-    top: 0;
-
-  }
-}
-.page-footer{
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  gap: 1em;
-  margin: 2em 0 3em;
-  & > h1, .btn{
-    margin-top: 0;
-    margin-bottom: 0;
-  }
-
-}
-.tab-content {
-  & > div > div {
-    margin-top: 25px;
-  }
-}
-
-.downloads {
-  a {
-    line-height: 2;
-    color: map-get($theme-colors, primary);
-    font-weight: bold;
-  }
-}
-
-.image-details {
-  .image-preview {
-    // height: calc(100% - 33px);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    img{
-      transition: height .5s ease;
-    }
-  }
-
-  .image-settings {
-    display: flex;
-    justify-content: flex-end;
-    gap: 12px;
   }
 }
 #loading {
@@ -177,12 +79,6 @@ a:not([href]):not([class]){
   width: 50%;
   height: 5px;
 }
-
-
-.new-button-wrapper {
-  margin-bottom: 20px;
-}
-
 .alert {
   position: relative;
   padding-right: 3em;
@@ -254,142 +150,5 @@ img {
 .pagination {
   .page-link {
     cursor: pointer;
-  }
-}
-// Animations
-@include transition(menu-slide, (transform: translateX(-100%)));
-@include transition(fade, (opacity: 0));
-@include transition(change-content, (opacity: 0));
-
-.delete-icon{
-  color: $danger;
-  transition: color .3s ease;
-  cursor: pointer;
-  &:hover{
-    color: darken($danger, 20%);
-  }
-}
-
-.transition-transform{
-  transition: transform .3s ease !important;
-}
-
-@for $i from 1 through 4 {
-  .gap-#{$i}{
-    gap: #{$i / 2}em;
-  }
-}
-
-
-.center-self {
-  margin: auto;
-  text-align: center;
-}
-
-.product-transition {
-  position: absolute;
-  z-index: 999;
-  opacity: 0.7;
-  transition: all 0.8s ease, opacity 0.2s ease;
-  // border-radius: 50%;
-  background-color: white;
-  overflow: hidden;
-
-  img {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
-}
-
-#transition-wrapper {
-  position: fixed;
-  pointer-events: none;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  left: 0;
-  height: 100vh;
-  width: 100vw;
-  z-index: 998;
-}
-
-.datos_cliente{
-  display: none;
-}
-
-.datos_cliente.mostrar{
-  display: block;
-}
-
-button.btn.btn-danger.btn-list-remove{
-  padding: 3px 0 0 0;
-  margin: 0;
-  border-radius: 100%;
-  height: 23px;
-  width: 23px;
-  background: #E9F3E3 0% 0% no-repeat padding-box;
-}
-
-.icono-remove{
-  font-size: 18px!important;
-}
-
-.btn-anadir{
-  padding: 6px 30px 6px;
-}
-
-.select-contenedor{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.select2{
-  width: 100%;
-}
-
-.list-checks{
-  margin-top: 15px;
-  ul{
-    padding-left: 0;
-    li{
-      list-style-type: none;
-    }
-  }
-}
-
-.contenedor-fecha{
-  padding-top: 10px;
-  label{
-    color: #bbb;
-    padding-top: 5px;
-    margin-bottom: 0;
-  }
-  .caja-fecha{
-    background-color: #EFF7F4;
-    height: 48px;
-    padding-left: 10px;
-  }
-
-}
-
-.titulo-list{
-  font-size: 20px;
-  font-weight: 500; 
-  color: #303030;
-  letter-spacing: 0px;
-}
-
-
-.textos-legales{
-  .row{
-    padding-bottom: 100px;
-  }
-  textarea {
-    &.form-control {
-      height: 150px;
-    }
   }
 }

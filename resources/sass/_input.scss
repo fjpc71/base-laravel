@@ -7,16 +7,12 @@ input {
     display: inline-block;
     position: relative;
     margin: 0;
-    border: 1px solid map-get($theme-colors, secondary);
     border-radius: 0;
     -webkit-appearance: none;
     padding: 9px;
     vertical-align: middle;
     background-color: $white;
-
     &:checked {
-      color: map-get($theme-colors, primary);
-
       &::after {
         display: none;
       }
@@ -39,12 +35,6 @@ input {
       width: 20px;
       height: 20px;
       content: '';
-    }
-
-    &:checked {
-      &:after {
-        background-color: map-get($theme-colors, primary);
-      }
     }
   }
 

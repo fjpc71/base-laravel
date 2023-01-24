@@ -50,8 +50,6 @@ $anim-time: 0.3s;
 
       &.disabled,
       &:disabled {
-        background-color: map-get($theme-colors, disabled);
-        color: map-get($theme-colors, primary);
         font-weight: normal;
       }
 
