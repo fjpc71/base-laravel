@@ -12,3 +12,4 @@
 #### Mysql 5.7 a 8.0
 #### MPDF 8.1
 #### Módulos de node.js
+#### Añadida librería Primevue Datatables
