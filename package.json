@@ -30,6 +30,8 @@
     },
     "dependencies": {
         "moment": "^2.29.4",
+        "primeicons": "^6.0.1",
+        "primevue": "^3.17.0",
         "sweetalert2": "^11.7.1",
         "velocity-animate": "^1.5.2",
         "vue-native-color-picker": "^1.2.0",

@@ -19,6 +19,8 @@ import {
 
 import PrivateLayout from "./Layout/Private/PrivateLayout";
 
+import 'primeicons/primeicons.css';
+
 const el = document.getElementById("app");
 
 const app = createApp({
