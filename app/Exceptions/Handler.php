@@ -35,14 +35,14 @@ class Handler extends ExceptionHandler
      *
      * @return void
      */
-    // public function register()
-    // {
-    //     $this->reportable(function (InertiaMessage $e) {
-    //         //
-    //     });
-    // }
+     public function register()
+     {
+         $this->reportable(function (InertiaMessage $e) {
+             //
+         });
+    }
 
-    /* public function render($request, Throwable $e)
+    public function render($request, Throwable $e)
     {
         if (is_a($e, \App\Exceptions\MessageException::class)) {
             session()->flash('danger', $e->message);
@@ -52,7 +52,6 @@ class Handler extends ExceptionHandler
             foreach ($e->errors() as $error) {
                 $msg .= $error[0];
             }
-            //return Redirect::back()->withErrors(["msg" => $msg]);
             return response(["message" => $msg], $e->status);
         } elseif (is_a($e, \Illuminate\Auth\AuthenticationException::class)) {
             $response = parent::render($request, $e);
@@ -64,15 +63,9 @@ class Handler extends ExceptionHandler
         } elseif (is_a($e, \Illuminate\Session\TokenMismatchException::class)) {
             session()->put("previous_url", url()->current());
             return Redirect::to("/login");
-        } elseif (is_a($e, OrderExists::class)) {
-            return $e->render();
         }
         $response = parent::render($request, $e);
-        // return response($e->getMessage(), $response->status());
-        // the first function will give us nice errors
-        if (env('APP_ENV') != 'production') {
-            dd($e);
-        }
+        
         session()->flash("danger", $e->getMessage());
         return Redirect::back();
         return response(
@@ -83,35 +76,7 @@ class Handler extends ExceptionHandler
             ],
             $response->status()
         );
-    } */
-
-    public function render($request, Throwable $e)
-    {
-        if (is_a($e, \App\Exceptions\MessageException::class)) {
-            return response(["message" => $e->message], $e->code);
-        } elseif (is_a($e, ValidationException::class)) {
-            $msg = "";
-            foreach ($e->errors() as $error) {
-                $msg .= $error[0];
-            }
-            return response(["message" => $msg], $e->status);
-        } elseif (is_a($e, \Illuminate\Auth\AuthenticationException::class)) {
-            $response = parent::render($request, $e);
-            return response($response, $response->status());
-        }
-        $response = parent::render($request, $e);
-        // return response($e->getMessage(), $response->status());
-        // the first function will give us nice errors
-        return response(
-            [
-              "exception-line" => $e->getLine(),
-              "exception-file" => $e->getFile(),
-              "message" => $e->getMessage()
-            ],
-            $response->status()
-        );
     }
-
 
     protected function unauthenticated($request, AuthenticationException $exception)
     {
