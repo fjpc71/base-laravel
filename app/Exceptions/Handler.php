@@ -45,8 +45,7 @@ class Handler extends ExceptionHandler
     public function render($request, Throwable $e)
     {
         if (is_a($e, \App\Exceptions\MessageException::class)) {
-            session()->flash('danger', $e->message);
-            return Redirect::back();
+            return response(["message" => $e->message], $e->code);
         } elseif (is_a($e, ValidationException::class)) {
             $msg = "";
             foreach ($e->errors() as $error) {
@@ -57,7 +56,7 @@ class Handler extends ExceptionHandler
             $response = parent::render($request, $e);
 
             if (Auth::user()) {
-                session()->flash('danger', __('auth.failed'));
+                return response($response, $response->status());
             }
             return Redirect::to("/login");
         } elseif (is_a($e, \Illuminate\Session\TokenMismatchException::class)) {
