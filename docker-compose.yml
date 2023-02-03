@@ -63,6 +63,27 @@ services:
       - 82:80
     restart: unless-stopped
 
+  smtp:
+    platform: linux/x86_64
+    image: mailhog/mailhog
+    container_name: laravel-smtp
+    logging:
+      driver: 'none'
+    env_file:
+      - .env
+    environment:
+      MAIL_MAILER: $MAIL_MAILER
+      MAIL_HOST: $MAIL_HOST
+      MAIL_PORT: $MAIL_PORT
+      MAIL_USERNAME: $MAIL_USERNAME
+      MAIL_PASSWORD: $MAIL_PASSWORD
+      MAIL_ENCRYPTION: $MAIL_ENCRYPTION
+    ports:
+      - "1025:1025"
+      - "8100:8025"
+    networks:
+      - app-network
+
 networks:
   app-network:
     driver: bridge
